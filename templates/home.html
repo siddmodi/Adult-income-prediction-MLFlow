@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--title-->
+    <title>Income Prediction</title>
+
+    <!--css link-->>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+
+<img class="img" src="{{url_for('static',filename='css/img.png') }}"">
+
+    <div class = form>
+        <form action="/predict" method='POST'>
+            <div>
+                <div>
+                    <label class="label" for="age">Age:</label>
+                    <input type="int" id="age" name="age"><br>
+                </div>
+
+                <div>
+                    <label class="label" for="education">Education:</label>
+                    <select name="education" id="education" required="required">
+                    <option hidden disabled selected value> -- select an option -- </option>
+                    <option value=0>Preschool</option>
+                    <option value=1>1st-4th</option>
+                    <option value=2>5th-6th</option>
+                    <option value=3>7th-8th</option>
+                    <option value=4>9th</option>
+                    <option value=5>10th</option>
+                    <option value=6>11th</option>
+                    <option value=7>12th</option>
+                    <option value=8>HS-grad</option>
+                    <option value=9>Prof-school</option>
+                    <option value=10>Some-college</option>
+                    <option value=11>Assoc-acdm</option>
+                    <option value=12>Assoc-voc</option>
+                    <option value=13>Bachelors</option>
+                    <option value=14>Masters</option>
+                    <option value=15>Doctorate</option>
+                    </select>  
+                </div>
+
+
+                <div>
+                    <label class="label" for="hours_per_week">Hours Per week:</label>
+                    <input type="int" id="hours_per_week" name="hours_per_week">
+                </div>
+
+
+                <div>
+                    <label class="label" for="marital_status">Marital Status:</label>
+                    <select name="marital_status" id="marital_status" required="required">
+                    <option hidden disabled selected value> -- select an option -- </option>
+                    <option value=0>married</option>
+                    <option value=1>single</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label" for="workclass">Workclass:</label>
+                    <select name="workclass" id="workclass" required="required">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="Self emp not inc">Self emp not inc</option>
+                        <option value="Private">Private</option>
+                        <option value="State gov">State gov</option>
+                        <option value="Local gov">Local gov</option>
+                        <option value="Self emp inc">Self emp inc</option>
+                        <option value="Without pay">Without pay</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label" for="occupation">Occupation:</label>
+                    <select name="occupation" id="occupation" required="required">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="Craft repair">Craft repair</option>
+                        <option value="Exec managerial">Exec managerial</option>
+                        <option value="Farming fishing">Farming fishing</option>
+                        <option value="Handlers cleaners">Handlers cleaners</option>
+                        <option value="Machine op inspct">Machine op inspct</option>
+                        <option value="Prof specialty">Prof specialty</option>
+                        <option value="Protective serv">Protective serv</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Tech support">Tech support</option>
+                        <option value="Transport moving">Transport moving</option>
+                        <option value="others">others</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label" for="sex">Sex:</label>
+                    <select name="sex" id="sex" required="required">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value=0>Female</option>
+                        <option value=1>Male</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label" for="country">Country:</label>
+                    <select name="country" id="country" required="required">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="El Salvador"> El Salvador</option>
+                        <option value="Germany">Germany</option>
+                        <option value="India">India</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="United States">United States</option>
+                        <option value="others">others</option>
+                    </select>
+                </div>
+
+                
+                <div>
+                    <label class="label" for="capital_gain_or_loss">Capital Gain or Loss Amount:</label>
+                    <input type="int" id="capital_gain_or_loss" name="capital_gain_or_loss">
+                    <!-- <p> (If loss then use '-' sign) </p> -->
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="predict">
+                </div>
+
+            </div>
+        </form> 
+    </div>
+    
+    
+
+<h3>{{ prediction_text }}</h3>
+
+
+<p>©2021 Siddharth</p>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+img {
+  padding-left: 450px;
+}
+
+.form { 
+  padding-top: 20px;
+  padding-left: 400px;
+  background-color: whitesmoke ;
+}
+
+.submit {
+  padding-left: 220px;
+}
+
+div {
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  background-color: whitesmoke ;
+}
+
+.heading {
+padding-right: 10px;
+padding-left: 550px;
+background-color: gray;
+color: black; 
+}
+
+.row {
+width: 100%;
+text-align: center; 
+}
+
+.block {
+width: 550px;
+display: inline-block;
+}
+
+.label {
+padding-left: 50px;
+}
+
+h3 {
+  padding-left: 560px;
+}

@@ -1,0 +1,52 @@
+name: Adult-income-prediction-MLFlow
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    command: "python main.py"
+
+  get_data:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_01_get_data.py --config={config}"
+
+  handling_missing_values:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_02_handling_missing_values.py --config={config}"
+
+  encoding:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_03_encoding.py --config={config}"
+
+  outlier_treatment:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_04_outlier_treatment.py --config={config}"
+
+  feature_selection_and_creation:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_05_feature_selection_and_creation.py --config={config}"
+
+  train_test_split:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_06_train_test_split.py --config={config}"
+
+  ct_and_model_selection:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_07_ct_and_model_selection.py --config={config}"
+
+  hyperparameter_tuning:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_08_hyperparameter_tuning.py --config={config}"
+
+  pipeline:
+    parameters:
+      config: {type: str, default: "configs/config.yaml"}
+    command: "python src/stage_09_pipeline.py --config={config}"
